@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { LiquidGlassCard } from "@/components/kokonutui/liquid-glass-card";
 import { ParallaxHeadline } from "@/components/switchboard/parallax";
+import { Magnetic } from "@/components/switchboard/magnetic";
 
 export function CtaCard() {
   return (
-    <section className="bg-[#070A12] py-24">
+    <section className="tint-magenta py-24">
       <div className="mx-auto max-w-5xl px-6">
         <LiquidGlassCard
           glassSize="lg"
@@ -25,12 +26,14 @@ export function CtaCard() {
             </p>
 
             <div className="mt-10 flex flex-col items-center gap-3">
-              <Link
-                href="/book-demo"
-                className="inline-flex h-12 items-center justify-center rounded-full bg-[#C7F36B] px-8 text-sm font-medium text-[#070A12] transition-colors hover:bg-[#C7F36B]/90"
-              >
-                Book a demo call
-              </Link>
+              <Magnetic amount={14}>
+                <Link
+                  href="/book-demo"
+                  className="inline-flex h-12 items-center justify-center rounded-full bg-[#C7F36B] px-8 text-sm font-medium text-[#070A12] transition-colors hover:bg-[#C7F36B]/90"
+                >
+                  Book a demo call
+                </Link>
+              </Magnetic>
               <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/55">
                 No deck. No SDR. Just the system.
               </p>

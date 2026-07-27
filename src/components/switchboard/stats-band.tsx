@@ -1,5 +1,6 @@
 import { LineChart, Line } from "@/components/charts/line-chart";
 import { ParallaxHeadline } from "@/components/switchboard/parallax";
+import { CountUp } from "@/components/switchboard/count-up";
 
 // 12 months of calls+automations handled. Mild upward trend with seasonality.
 const SERIES = Array.from({ length: 12 }, (_, i) => {
@@ -13,7 +14,7 @@ const SERIES = Array.from({ length: 12 }, (_, i) => {
 
 export function StatsBand() {
   return (
-    <section className="border-y border-white/5 bg-[#0B0F1A] py-20">
+    <section className="tint-mix border-y border-white/5 py-20">
       <div className="mx-auto max-w-6xl px-6">
         <ParallaxHeadline amount={26}>
           <div className="flex items-end justify-between gap-6">
@@ -34,9 +35,9 @@ export function StatsBand() {
         <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-[1fr_2fr]">
           <dl className="grid grid-cols-1 gap-8">
             {[
-              { label: "Calls handled", value: "248k", sub: "Across 14 deployments" },
-              { label: "Workflow runs", value: "1.2M", sub: "Median runtime 1.4s" },
-              { label: "Median pickup", value: "0.9s", sub: "Voice agents" },
+              { label: "Calls handled", to: 248, format: "k" as const, sub: "Across 14 deployments" },
+              { label: "Workflow runs", to: 1.2, format: "M" as const, sub: "Median runtime 1.4s" },
+              { label: "Median pickup", to: 0.9, format: "s1" as const, sub: "Voice agents" },
             ].map((stat) => (
               <div key={stat.label}>
                 <dt className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/40">
@@ -44,7 +45,7 @@ export function StatsBand() {
                 </dt>
                 <dd className="mt-2 flex items-baseline gap-2">
                   <span className="font-mono text-4xl font-medium tracking-tight text-white">
-                    {stat.value}
+                    <CountUp to={stat.to} format={stat.format} />
                   </span>
                   <span className="text-xs text-white/55">{stat.sub}</span>
                 </dd>

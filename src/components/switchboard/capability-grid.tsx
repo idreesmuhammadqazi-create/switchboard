@@ -34,7 +34,7 @@ const CAPABILITIES = [
 export function CapabilityGrid() {
   const reduced = useReducedMotion();
   return (
-    <section id="capabilities" className="bg-[#070A12] py-24 sm:py-32">
+    <section id="capabilities" className="tint-lime py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <ParallaxHeadline className="max-w-2xl" amount={20}>
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-white/40">

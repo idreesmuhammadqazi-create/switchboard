@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { animate, stagger, eases } from "animejs";
 import { SilkBackground } from "@/components/switchboard/silk-background";
+import { Magnetic } from "@/components/switchboard/magnetic";
 
 const HEADLINE = "Automation that actually ships.";
 const SERVICES = [
@@ -62,23 +63,31 @@ export function Hero() {
           ref={headlineRef}
           className="max-w-4xl text-balance text-5xl font-semibold tracking-tight text-white sm:text-6xl md:text-7xl"
         >
-          {HEADLINE.split(" ").map((word, wi) => (
-            <span
-              key={wi}
-              className="sb-word inline-block whitespace-nowrap"
-              aria-hidden={false}
-            >
-              {word.split("").map((char, ci) => (
-                <span
-                  key={`${wi}-${ci}`}
-                  className="sb-char inline-block opacity-0"
-                >
-                  {char}
-                </span>
-              ))}
-              {wi < HEADLINE.split(" ").length - 1 ? " " : ""}
-            </span>
-          ))}
+          {HEADLINE.split(" ").map((word, wi) => {
+            const isLast = wi === HEADLINE.split(" ").length - 1;
+            return (
+              <span
+                key={wi}
+                className="sb-word inline-block whitespace-nowrap"
+                aria-hidden={false}
+              >
+                {word.split("").map((char, ci) => (
+                  <span
+                    key={`${wi}-${ci}`}
+                    className={
+                      "sb-char inline-block opacity-0" +
+                      (isLast
+                        ? " bg-gradient-to-r from-[#C7F36B] to-[#6ED8E8] bg-clip-text text-transparent"
+                        : "")
+                    }
+                  >
+                    {char}
+                  </span>
+                ))}
+                {wi < HEADLINE.split(" ").length - 1 ? " " : ""}
+              </span>
+            );
+          })}
         </h1>
 
         <p className="mt-7 max-w-2xl text-pretty text-base leading-7 text-white/65 sm:text-lg">
@@ -110,12 +119,14 @@ export function Hero() {
         </ul>
 
         <div className="mt-10 flex flex-col items-center gap-4">
-          <Link
-            href="/book-demo"
-            className="inline-flex h-11 items-center justify-center rounded-full bg-[#C7F36B] px-7 text-sm font-medium text-[#070A12] transition-colors hover:bg-[#C7F36B]/90"
-          >
-            Book a demo call
-          </Link>
+          <Magnetic amount={12}>
+            <Link
+              href="/book-demo"
+              className="inline-flex h-11 items-center justify-center rounded-full bg-[#C7F36B] px-7 text-sm font-medium text-[#070A12] transition-colors hover:bg-[#C7F36B]/90"
+            >
+              Book a demo call
+            </Link>
+          </Magnetic>
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/40">
             Live in under a week · No seat fee · n8n-native
           </p>

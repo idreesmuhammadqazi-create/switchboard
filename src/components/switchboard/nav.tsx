@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Magnetic } from "@/components/switchboard/magnetic";
 
 export function Nav() {
   return (
@@ -37,12 +38,14 @@ export function Nav() {
           </a>
         </nav>
 
-        <Link
-          href="/book-demo"
-          className="inline-flex h-9 items-center justify-center rounded-full bg-[#C7F36B] px-4 text-sm font-medium text-[#070A12] transition-colors hover:bg-[#C7F36B]/90"
-        >
-          Book a demo
-        </Link>
+        <Magnetic amount={8}>
+          <Link
+            href="/book-demo"
+            className="inline-flex h-9 items-center justify-center rounded-full bg-[#C7F36B] px-4 text-sm font-medium text-[#070A12] transition-colors hover:bg-[#C7F36B]/90"
+          >
+            Book a demo
+          </Link>
+        </Magnetic>
       </div>
     </header>
   );

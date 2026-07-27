@@ -1,5 +1,6 @@
 import { Reveal, RevealChild } from "@/components/switchboard/reveal";
 import { ParallaxHeadline } from "@/components/switchboard/parallax";
+import { TiltCard } from "@/components/switchboard/tilt-card";
 
 type Service = {
   id: string;
@@ -69,7 +70,7 @@ const SERVICES: Service[] = [
 
 export function ServiceCatalog() {
   return (
-    <section id="services" className="bg-[#070A12] py-24 sm:py-32">
+    <section id="services" className="tint-cyan py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <ParallaxHeadline className="max-w-2xl" amount={18}>
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-white/40">
@@ -85,8 +86,23 @@ export function ServiceCatalog() {
 
         <Reveal mode="stagger-children" className="mt-14 grid grid-cols-1 gap-px bg-white/5 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s) => (
-            <RevealChild key={s.id} className="group bg-[#070A12] p-8 transition-colors hover:bg-[#0E1422]">
-              <ServiceCard service={s} />
+            <RevealChild
+              key={s.id}
+              className={`group relative p-8 transition-colors ${
+                s.featured
+                  ? "border border-[#C7F36B]/40 bg-[#0E1422]"
+                  : "border border-transparent bg-[#070A12] hover:bg-[#0E1422]"
+              }`}
+            >
+              {s.featured ? (
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-x-6 -top-px h-px bg-gradient-to-r from-transparent via-[#C7F36B] to-transparent"
+                />
+              ) : null}
+              <TiltCard className="relative h-full">
+                <ServiceCard service={s} />
+              </TiltCard>
             </RevealChild>
           ))}
         </Reveal>

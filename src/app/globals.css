@@ -204,3 +204,59 @@
     @apply font-sans;
   }
 }
+
+/* Section color tints — radial-gradient washes for hue, plus a fine SVG
+   noise overlay to kill color banding (radial gradients on dark backgrounds
+   show 8-bit banding without a grain layer). */
+@layer utilities {
+  .tint-cyan {
+    background:
+      radial-gradient(80% 50% at 80% 0%, rgba(110,216,232,0.10) 0%, transparent 60%),
+      radial-gradient(60% 40% at 0% 100%, rgba(110,216,232,0.06) 0%, transparent 60%),
+      var(--bg-base, #070A12);
+  }
+  .tint-lime {
+    background:
+      radial-gradient(70% 50% at 0% 30%, rgba(199,243,107,0.08) 0%, transparent 60%),
+      radial-gradient(60% 40% at 100% 100%, rgba(199,243,107,0.05) 0%, transparent 60%),
+      var(--bg-base, #070A12);
+  }
+  .tint-magenta {
+    background:
+      radial-gradient(70% 60% at 50% 50%, rgba(181,122,255,0.10) 0%, transparent 60%),
+      radial-gradient(60% 50% at 100% 0%, rgba(199,243,107,0.05) 0%, transparent 60%),
+      var(--bg-base, #070A12);
+  }
+  .tint-mix {
+    background:
+      radial-gradient(60% 40% at 20% 30%, rgba(199,243,107,0.06) 0%, transparent 60%),
+      radial-gradient(60% 40% at 80% 70%, rgba(110,216,232,0.06) 0%, transparent 60%),
+      radial-gradient(40% 30% at 50% 100%, rgba(181,122,255,0.06) 0%, transparent 60%),
+      var(--bg-base, #070A12);
+  }
+  /* Layer a fixed-position SVG noise overlay on top of any tinted section
+     so the gradient banding disappears. Noise is inline SVG so no extra
+     network request is needed. */
+  .tint-cyan, .tint-lime, .tint-magenta, .tint-mix {
+    position: relative;
+  }
+  .tint-cyan::after, .tint-lime::after, .tint-magenta::after, .tint-mix::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.3 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-size: 160px 160px;
+  }
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 255, 255, 0.08),
+      transparent
+    );
+  }
+}
