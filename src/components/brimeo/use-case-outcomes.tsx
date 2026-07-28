@@ -1,5 +1,5 @@
-import { Reveal, RevealChild } from "@/components/switchboard/reveal";
-import { ParallaxHeadline } from "@/components/switchboard/parallax";
+import { Reveal, RevealChild } from "@/components/brimeo/reveal";
+import { ParallaxHeadline } from "@/components/brimeo/parallax";
 
 const TILES = [
   {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FooterMascot } from "@/components/switchboard/footer-mascot";
+import { FooterMascot } from "@/components/brimeo/footer-mascot";
 
 export function Footer() {
   return (
@@ -14,7 +14,7 @@ export function Footer() {
               <span className="h-1.5 w-1.5 rounded-full bg-[#C7F36B]" />
             </span>
             <span className="font-mono text-sm font-medium text-white">
-              Switchboard
+              Brimeo
             </span>
           </Link>
           <p className="mt-4 max-w-xs text-sm text-white/55">
@@ -35,7 +35,7 @@ export function Footer() {
           title="Company"
           links={[
             ["Book a demo", "/book-demo"],
-            ["Contact", "mailto:hello@switchboard.ai"],
+            ["Contact", "mailto:hello@brimeo.ai"],
           ]}
         />
         <FooterCol
@@ -48,7 +48,7 @@ export function Footer() {
       </div>
 
       <div className="mx-auto mt-12 flex max-w-6xl flex-col items-start justify-between gap-4 border-t border-white/5 px-6 pt-6 font-mono text-[11px] uppercase tracking-[0.18em] text-white/40 sm:flex-row sm:items-center">
-        <span>© {new Date().getFullYear()} Switchboard AI Ops</span>
+        <span>© {new Date().getFullYear()} Brimeo AI Ops</span>
         <span>v0.2 · Powered by n8n, motion, and an actual agent</span>
       </div>
 

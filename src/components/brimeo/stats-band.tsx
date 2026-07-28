@@ -1,6 +1,6 @@
 import { LineChart, Line } from "@/components/charts/line-chart";
-import { ParallaxHeadline } from "@/components/switchboard/parallax";
-import { CountUp } from "@/components/switchboard/count-up";
+import { ParallaxHeadline } from "@/components/brimeo/parallax";
+import { CountUp } from "@/components/brimeo/count-up";
 
 // 12 months of calls+automations handled. Mild upward trend with seasonality.
 const SERIES = Array.from({ length: 12 }, (_, i) => {

@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Switchboard — AI automation agency",
+  title: "Brimeo — AI automations to fill every gap",
   description:
-    "n8n automations, voice agents, chatbots, and AI workflows that ship. Production-grade, on-call, n8n-native.",
+    "We close the gaps in your operations with n8n workflows, voice agents, chatbots, and AI automations. Production-grade, n8n-native.",
 };
 
 export default function RootLayout({

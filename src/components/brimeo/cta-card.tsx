@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { LiquidGlassCard } from "@/components/kokonutui/liquid-glass-card";
-import { ParallaxHeadline } from "@/components/switchboard/parallax";
-import { Magnetic } from "@/components/switchboard/magnetic";
+import { ParallaxHeadline } from "@/components/brimeo/parallax";
+import { Magnetic } from "@/components/brimeo/magnetic";
 
 export function CtaCard() {
   return (

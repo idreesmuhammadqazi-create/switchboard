@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Magnetic } from "@/components/switchboard/magnetic";
+import { Magnetic } from "@/components/brimeo/magnetic";
 
 export function Nav() {
   return (
@@ -13,7 +13,7 @@ export function Nav() {
             <span className="h-1.5 w-1.5 rounded-full bg-[#C7F36B]" />
           </span>
           <span className="font-mono text-sm font-medium tracking-tight text-white">
-            Switchboard
+            Brimeo
           </span>
         </Link>
 

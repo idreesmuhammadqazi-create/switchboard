@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
-import { ParallaxHeadline } from "@/components/switchboard/parallax";
+import { ParallaxHeadline } from "@/components/brimeo/parallax";
 
 const STEPS = [
   {
@@ -28,7 +28,7 @@ export function HowItWorks() {
       <div className="mx-auto max-w-6xl px-6">
         <ParallaxHeadline className="max-w-2xl" amount={22}>
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-white/40">
-            How Switchboard works
+            How Brimeo works
           </p>
           <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl">
             Three steps from kickoff to first call.

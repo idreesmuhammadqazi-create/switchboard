@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
-import { ParallaxHeadline } from "@/components/switchboard/parallax";
+import { ParallaxHeadline } from "@/components/brimeo/parallax";
 
 type Feature = {
   id: string;

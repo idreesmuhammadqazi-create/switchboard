@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { animate, stagger, eases } from "animejs";
-import { SilkBackground } from "@/components/switchboard/silk-background";
-import { Magnetic } from "@/components/switchboard/magnetic";
+import { SilkBackground } from "@/components/brimeo/silk-background";
+import { Magnetic } from "@/components/brimeo/magnetic";
 
-const HEADLINE = "Automation that actually ships.";
+const HEADLINE = "AI automations to fill every gap.";
 const SERVICES = [
   "n8n",
   "Voice agents",
@@ -56,7 +56,7 @@ export function Hero() {
 
       <div className="relative mx-auto flex min-h-[92vh] max-w-5xl flex-col items-center justify-center px-6 pt-20 pb-28 text-center">
         <p className="mb-8 font-mono text-[11px] uppercase tracking-[0.22em] text-white/50">
-          Switchboard / AI Operations
+          Brimeo / AI Operations
         </p>
 
         <h1
@@ -91,8 +91,8 @@ export function Hero() {
         </h1>
 
         <p className="mt-7 max-w-2xl text-pretty text-base leading-7 text-white/65 sm:text-lg">
-          We build n8n workflows, voice agents, and AI automations that run
-          <span className="text-white/85"> minus the headcount math.</span>
+          The work humans skip, the handoffs that slip, the tickets at 2am —
+          <span className="text-white/85"> we close the gaps with n8n and AI.</span>
         </p>
 
         <ul

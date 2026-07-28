@@ -1,6 +1,6 @@
-import { Reveal, RevealChild } from "@/components/switchboard/reveal";
-import { ParallaxHeadline } from "@/components/switchboard/parallax";
-import { TiltCard } from "@/components/switchboard/tilt-card";
+import { Reveal, RevealChild } from "@/components/brimeo/reveal";
+import { ParallaxHeadline } from "@/components/brimeo/parallax";
+import { TiltCard } from "@/components/brimeo/tilt-card";
 
 type Service = {
   id: string;
@@ -277,7 +277,7 @@ function CustomVisual() {
     <svg viewBox="0 0 320 96" className="h-full w-full">
       <g fontFamily="ui-monospace" fontSize="9">
         <text x="16" y="22" fill="#9AA8BA">
-          <tspan fill="#C7F36B">const</tspan> agent = <tspan fill="#9AA8BA">await</tspan> switchboard.
+          <tspan fill="#C7F36B">const</tspan> agent = <tspan fill="#9AA8BA">await</tspan> brimeo.
         </text>
         <text x="16" y="40" fill="#9AA8BA">
           <tspan fill="#6ED8E8">  build</tspan>({`{`}
